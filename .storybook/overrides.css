@@ -1,0 +1,3 @@
+apple-pay-button[aria-hidden], apple-pay-button[hidden] {
+    display: inline-block !important;
+  }
