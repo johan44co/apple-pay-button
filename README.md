@@ -1,4 +1,4 @@
-# Apple Pay Button React Library
+# Apple Pay Button (React) Library
 
 ## Description
 
@@ -25,7 +25,7 @@ npm install your-library-name
 Here's a basic example of how to use this library:
 
 ```tsx
-import { ApplePayButton } from 'your-library-name';
+import { ApplePayButton } from 'apple-pay-button';
 
 function App() {
     const onClick = () => {
