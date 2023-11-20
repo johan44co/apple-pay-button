@@ -17,7 +17,7 @@ Here are some resources to help you understand how this library works:
 To install this library, run the following command:
 
 ```bash
-npm install your-library-name
+npm install apple-pay-button
 ```
 
 ## Usage
