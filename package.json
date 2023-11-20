@@ -1,0 +1,51 @@
+{
+  "name": "apple-pay-button",
+  "version": "1.0.0",
+  "description": "Apple Pay Button build in React following Apple Pay Button JavaScript guidelines",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "build": "tsup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johan44co/apple-pay-button.git"
+  },
+  "keywords": [
+    "apple",
+    "react",
+    "pay"
+  ],
+  "author": "johan44co",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johan44co/apple-pay-button/issues"
+  },
+  "homepage": "https://github.com/johan44co/apple-pay-button#readme",
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
+    "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^14.1.2",
+    "@types/jest": "^29.5.8",
+    "@types/react": "^18.2.37",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.1",
+    "tsup": "^8.0.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
