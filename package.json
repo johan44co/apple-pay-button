@@ -1,6 +1,6 @@
 {
   "name": "apple-pay-button",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Apple Pay Button build in React following Apple Pay Button JavaScript guidelines",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
