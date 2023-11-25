@@ -24,7 +24,10 @@
     "apple",
     "react",
     "pay",
-    "button"
+    "button",
+    "apple-pay",
+    "apple-pay-button",
+    "apple-pay-button-react"
   ],
   "author": "johan44co",
   "license": "MIT",
