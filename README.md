@@ -58,6 +58,7 @@ export default App;
 | `locale` | `string` | The locale for the Apple Pay button. Default is `'en-US'`. |
 | `onClick` | `() => void` | The callback function when the Apple Pay button is clicked. |
 | `style` | `{ width?: string; height?: string; borderRadius?: string; padding?: string; boxSizing?: string; }` | The style object for the Apple Pay button. |
+| `disabled` | `boolean` | Whether the Apple Pay button is disabled. Default is `false`. |
 
 Where `ButtonType` is one of the following: `'plain'`, `'add-money'`, `'book'`, `'buy'`, `'check-out'`, `'continue'`, `'contribute'`, `'donate'`, `'order'`, `'pay'`, `'reload'`, `'rent'`, `'set-up'`, `'subscribe'`, `'support'`, `'tip'`, `'top-up'`.
 

@@ -72,3 +72,9 @@ WhiteOutline.args = {
   ...Default.args,
   buttonStyle: 'white-outline'
 };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  ...Default.args,
+  disabled: true
+};
