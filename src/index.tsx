@@ -53,7 +53,7 @@ const ApplePayButton: React.FC<ApplePayButtonProps> = ({
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = 'https://applepay.cdn-apple.com/jsapi/v1.1.0/apple-pay-sdk.js';
+    script.src = 'https://applepay.cdn-apple.com/jsapi/1.latest/apple-pay-sdk.js';
     script.async = true;
     document.body.appendChild(script);
     return () => {
