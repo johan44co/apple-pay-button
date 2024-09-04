@@ -4218,6 +4218,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/applepayjs@npm:^14.0.8":
+  version: 14.0.8
+  resolution: "@types/applepayjs@npm:14.0.8"
+  checksum: 9d4ed907fea8413db0aaf692dda7d14b728ebccf9db4face5c348827ab759e06d2912b7990d803b8d6b36cb1c59ba8598c9b5cb08241b14846dd412d935815ef
+  languageName: node
+  linkType: hard
+
 "@types/aria-query@npm:^5.0.1":
   version: 5.0.4
   resolution: "@types/aria-query@npm:5.0.4"
@@ -5144,6 +5151,7 @@ __metadata:
     "@storybook/testing-library": ^0.2.2
     "@testing-library/jest-dom": ^6.1.4
     "@testing-library/react": ^14.1.2
+    "@types/applepayjs": ^14.0.8
     "@types/jest": ^29.5.8
     "@types/react": ^18.2.37
     "@typescript-eslint/eslint-plugin": ^6.4.0
