@@ -119,8 +119,7 @@ function App() {
           status: ApplePaySession.STATUS_SUCCESS,
         };
         session.completePayment(result);
-      }
-      else {
+      } else {
         const result: ApplePayJS.ApplePayPaymentAuthorizationResult = {
           status: ApplePaySession.STATUS_FAILURE,
         };
