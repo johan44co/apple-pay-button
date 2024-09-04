@@ -29,8 +29,111 @@ import { ApplePayButton } from 'apple-pay-button';
 
 function App() {
     const onClick = () => {
-        // Do something
+      // Define ApplePayPaymentRequest
+      const applePayRequest: ApplePayJS.ApplePayPaymentRequest = {
+        countryCode: 'US',
+        currencyCode: 'USD',
+        merchantCapabilities: [
+          "supports3DS"
+        ],
+        supportedNetworks: [
+          "visa",
+          "masterCard",
+          "amex",
+          "discover"
+        ],
+        total: {
+          label: "Merchant Name",
+          type: "final",
+          amount: "10.00",
+        }
+      };
+
+      // Create ApplePaySession
+      const session = new ApplePaySession(3, applePayRequest);
+
+      handleEventsForApplePay(session);
+
+      session.begin();
     }
+  
+  function handleEventsForApplePay(session: ApplePaySession) {
+
+    session.onvalidatemerchant = async (event: ApplePayJS.ApplePayValidateMerchantEvent) => {
+      // Call your own server to request a new merchant session.
+      const merchantSession = await validateMerchant(event.validationURL);
+      if (merchantSession) {
+        session.completeMerchantValidation(merchantSession);
+      } else {
+        console.error("Error during validating merchant");
+      }
+
+    };
+
+    session.onpaymentmethodselected = (event: ApplePayJS.ApplePayPaymentMethodSelectedEvent) => {
+      // Define ApplePayPaymentMethodUpdate based on the selected payment method.
+      // No updates or errors are needed, pass an empty object.
+      const update: ApplePayJS.ApplePayPaymentMethodUpdate = {
+        newTotal: {
+          label: "Merchant Name",
+          type: "final",
+          amount: "10.00",
+        }
+      };
+      session.completePaymentMethodSelection(update);
+    };
+
+    session.onshippingmethodselected = (event: ApplePayJS.ApplePayShippingMethodSelectedEvent) => {
+      // Define ApplePayShippingMethodUpdate based on the selected shipping method.
+      // No updates or errors are needed, pass an empty object. 
+      const update: ApplePayJS.ApplePayShippingMethodUpdate = {
+        newTotal: {
+          label: "Merchant Name",
+          type: "final",
+          amount: "10.00",
+        }
+      };
+      session.completeShippingMethodSelection(update);
+    };
+
+    session.onshippingcontactselected = (event: ApplePayJS.ApplePayShippingContactSelectedEvent) => {
+      // Define ApplePayShippingContactUpdate based on the selected shipping contact.
+      const update: ApplePayJS.ApplePayShippingMethodUpdate = {
+        newTotal: {
+          label: "Merchant Name",
+          type: "final",
+          amount: "10.00",
+        }
+      };
+      session.completeShippingContactSelection(update);
+    };
+
+
+    session.onpaymentauthorized = async (event: ApplePayJS.ApplePayPaymentAuthorizedEvent) => {
+      // Define ApplePayPaymentAuthorizationResult
+      const paymentData = event.payment;
+
+      if (paymentData.token) {
+        // Forward token to your gateway for processing payment and return result to apple pay session
+        const result: ApplePayJS.ApplePayPaymentAuthorizationResult = {
+          status: ApplePaySession.STATUS_SUCCESS,
+        };
+        session.completePayment(result);
+      }
+      else {
+        const result: ApplePayJS.ApplePayPaymentAuthorizationResult = {
+          status: ApplePaySession.STATUS_FAILURE,
+        };
+        session.completePayment(result);
+      }
+    };
+
+
+    session.oncancel = (event: ApplePayJS.Event) => {
+      console.log("Session Cancelled.");
+    };
+
+  }
 
   return (
     <div className="App">
