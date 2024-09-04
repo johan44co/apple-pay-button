@@ -11,6 +11,7 @@
   "scripts": {
     "test": "jest",
     "build": "tsup",
+    "prepublishOnly": "yarn build",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
     "storybook": "storybook dev -p 6006",
