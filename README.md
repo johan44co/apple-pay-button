@@ -207,6 +207,8 @@ MIT © [Johan Corrales](https://github.com/johan44co)
 
 ## Resources
 
+- [Apple Pay Button Storybook](https://apple-pay-button.johancorrales.com/) - Interactive component documentation
+- [Apple Pay Button Demo (Vercel)](https://apple-pay-button.vercel.app/) - Alternative demo site
 - [Apple Pay JavaScript Guidelines](https://developer.apple.com/documentation/apple_pay_on_the_web/displaying_apple_pay_buttons_using_javascript)
 - [Apple Pay Demo](https://applepaydemo.apple.com)
 - [Apple Pay Marketing](https://developer.apple.com/apple-pay/marketing/)
